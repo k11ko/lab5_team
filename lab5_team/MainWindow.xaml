@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab5_team"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="724.667">
     <Grid>
+        <Menu HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="50">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Информация" Click="Info_Click" />
+                <MenuItem Header="Очистить таблицы" Click="ClearTables_Click"/>
+                <MenuItem Header="Выход" Click="Exit_Click"/>
+            </MenuItem>
+        </Menu>
         
+        <DataGrid x:Name="Table_One" HorizontalAlignment="Left" Height="220" Margin="10,46,0,0" VerticalAlignment="Top" Width="320"/>
+        <Label Content="Размер N :" HorizontalAlignment="Left" Margin="10,271,0,0" VerticalAlignment="Top"/>
+        <Label Content="Размер M :" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Table1_N" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="23" Margin="83,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="Table1_M" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="23" Margin="85,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <Button Content="Заполнить массив" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="128,274,0,0" VerticalAlignment="Top" Width="143" Height="23" Click="FillArrayTable1_Click"/>
+        <Label Content="Массив нечетных строк таблицы 1 :" HorizontalAlignment="Left" Margin="10,343,0,0" VerticalAlignment="Top"/>
+        <Button Content="Выполнить задание" HorizontalAlignment="Left" Margin="128,306,0,0" VerticalAlignment="Top" Width="143" Click="TaskTable1_Click"/>
+        <TextBox x:Name="ResultTask1" HorizontalAlignment="Left" Height="36" Margin="10,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" IsReadOnly="True"/>
+
+        <DataGrid x:Name="Table_Two" HorizontalAlignment="Left" Height="220" Margin="385,46,0,0" VerticalAlignment="Top" Width="320"/>
+        <Label Content="Размер N :" HorizontalAlignment="Left" Margin="385,274,0,0" VerticalAlignment="Top"/>
+        <Label Content="Размер M :" HorizontalAlignment="Left" Margin="385,304,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Table2_N" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="23" Margin="455,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="Table2_M" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="23" Margin="455,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <Button Content="Заполнить массив" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="498,276,0,0" VerticalAlignment="Top" Width="143" Height="23" Click="FillArrayTable2_Click"/>
+        <Button Content="Выполнить задание" HorizontalAlignment="Left" Margin="498,307,0,0" VerticalAlignment="Top" Width="143" Click="TaskTable2_Click"/>
+        <Label Content="Массив нечетных строк таблицы 2 :" HorizontalAlignment="Left" Margin="385,343,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ResultTask2" HorizontalAlignment="Left" Height="36" Margin="385,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" IsReadOnly="True"/>
     </Grid>
 </Window>
