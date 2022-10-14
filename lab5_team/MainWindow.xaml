@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab5_team"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="724.667">
+        Title="Практическая работа 5(командная)" Height="450" Width="724.667">
     <Grid>
         <Menu HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="50">
             <MenuItem Header="Файл">

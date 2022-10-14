@@ -86,7 +86,6 @@ namespace lab5_team
 
         private void TaskTable1_Click(object sender, RoutedEventArgs e)
         {
-
         }
         #endregion
 
