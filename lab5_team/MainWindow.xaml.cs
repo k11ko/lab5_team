@@ -57,27 +57,34 @@ namespace lab5_team
         #endregion
 
         #region Работа с таблицей 1
-        private void FillArrayTable1_Click(object sender, RoutedEventArgs e)
+        double[,] matr1;
+
+		private void FillArrayTable1_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 int n = Convert.ToInt32(Table1_N.Text);
                 int m = Convert.ToInt32(Table1_M.Text);
-                if (n <= 10 && m <= 10)
+                if(n != 0 || m != 0)
                 {
-                    Random rnd = new Random();
-                    double[,] matr = new double[n, m];
-                    for(int i = 0; i < matr.GetLength(0); i++)
-                    {
-                        for(int j = 0; j < matr.GetLength(1); j++)
-                        {
-                            matr[i, j] = rnd.Next(-5,5) ;
-                        }
-                    }
-                    Table_One.ItemsSource = VisualArray.ToDataTable(matr).DefaultView;
-                }
-                else MessageBox.Show("Размеры массива не могут превышать значений больше 10", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+					if (n <= 10 && m <= 10)
+					{
+						Random rnd = new Random();
+						matr1 = new double[n, m];
+						for (int i = 0; i < matr1.GetLength(0); i++)
+						{
+							for (int j = 0; j < matr1.GetLength(1); j++)
+							{
+								matr1[i, j] = rnd.Next(-5, 5);
+							}
+						}
+						Table_One.ItemsSource = VisualArray.ToDataTable(matr1).DefaultView;
+					}
+					else MessageBox.Show("Размеры массива не могут превышать значений больше 10", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+				}
+                else MessageBox.Show("Введите размеры массива, отличные от 0", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
+			}
             catch
             {
                 MessageBox.Show("Произошла ошибка", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -86,31 +93,40 @@ namespace lab5_team
 
         private void TaskTable1_Click(object sender, RoutedEventArgs e)
         {
-        }
+            double[,] vs = Sort.SortMas(matr1);
+			ResultTask1.ItemsSource = VisualArray.ToDataTable(vs).DefaultView;
+		}
         #endregion
 
         #region Работа с таблицей 2
-        private void FillArrayTable2_Click(object sender, RoutedEventArgs e)
+        double[,] matr2;
+
+		private void FillArrayTable2_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 int n = Convert.ToInt32(Table2_N.Text);
                 int m = Convert.ToInt32(Table2_M.Text);
-                if (n <= 10 && m <= 10)
+				if (n != 0 && m != 0)
                 {
-                    Random rnd = new Random();
-                    double[,] matr = new double[n, m];
-                    for (int i = 0; i < matr.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < matr.GetLength(1); j++)
-                        {
-                            matr[i, j] = rnd.Next(-5, 5);
-                        }
-                    }
-                    Table_Two.ItemsSource = VisualArray.ToDataTable(matr).DefaultView;
-                }
-                else MessageBox.Show("Размеры массива не могут превышать значений больше 10", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+					if (n <= 10 && m <= 10)
+					{
+						Random rnd = new Random();
+						matr2 = new double[n, m];
+						for (int i = 0; i < matr2.GetLength(0); i++)
+						{
+							for (int j = 0; j < matr2.GetLength(1); j++)
+							{
+								matr2[i, j] = rnd.Next(-5, 5);
+							}
+						}
+						Table_Two.ItemsSource = VisualArray.ToDataTable(matr2).DefaultView;
+					}
+					else MessageBox.Show("Размеры массива не могут превышать значений больше 10", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+				}
+				else MessageBox.Show("Введите размеры массива, отличные от 0", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
+			}
             catch
             {
                 MessageBox.Show("Произошла ошибка", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -119,8 +135,9 @@ namespace lab5_team
 
         private void TaskTable2_Click(object sender, RoutedEventArgs e)
         {
-
-        }
+			double[,] vs = Sort.SortMas(matr1);
+			ResultTask2.ItemsSource = VisualArray.ToDataTable(vs).DefaultView;
+		}
         #endregion
     }
 }
